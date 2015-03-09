@@ -1,4 +1,4 @@
-var products = {
+var stock = {
   'Almond Toe Court Shoes': {
     category:'Women’s Footwear',
     colour: 'Patent Black'
