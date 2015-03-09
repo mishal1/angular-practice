@@ -2,19 +2,19 @@ var ShoppingCart = require('../../lib/shoppingCart.js');
 
 describe('Shopping Cart', function(){
 
-  var cart, shoe, stock, mockStock;
+  var cart, shoe, stock;
 
   beforeEach(function(){
     cart = new ShoppingCart();
     shoe = {price: 2, quantity: 1};
-    mockStock = { items: function(){
-        return {'shoe': shoe};
+    stock = { 'shoe': shoe,
+      decrease: function(name){
+        stock[name].quantity -= 1;
       },
-      decreaseStock: function(name){
-        return this.items().item.quantity -= 1;
+      increase: function(name){
+        stock[name].quantity += 1;
       }
     };
-    stock = mockStock.items();
   });
 
   it('is empty when initialized', function(){
@@ -47,7 +47,7 @@ describe('Shopping Cart', function(){
     describe('after an item is removed from the cart', function(){
 
       beforeEach(function(){
-        cart.remove(shoe);
+        cart.remove('shoe', stock);
       });
       
       it('it can no longer be seen in the cart', function(){
@@ -58,7 +58,10 @@ describe('Shopping Cart', function(){
         expect(cart.totalPrice).toEqual(0);
       });
 
-      it('the stock ', function(){});
+      it('the stock increases', function(){
+        cart.add('shoe', stock);
+        expect(cart.items).toEqual([shoe]);
+      });
 
     });
 
