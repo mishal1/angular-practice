@@ -37,10 +37,11 @@ grunt.initConfig({
   },
   watch: {
     files: [ 
-    './src/**/*.js',
+    './lib/**/*.js',
     './test/**/*.js',
     './views/*.ejs',
-    './public/**/*.js'
+    './public/**/*.js',
+    './mockDatabase/*.js'
     ], 
     tasks: ['jasmine_node', 'express', 'mochaTest', 'jshint']
   }
@@ -55,4 +56,4 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.registerTask('mocha',['express','mochaTest']);
 grunt.registerTask('jasmine', ['jasmine_node']);
 
-}
+};
