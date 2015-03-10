@@ -103,3 +103,8 @@ body {
   top: -9px;
   text-align: center;
 }
+
+#products {
+  top: 150px;
+  position: relative;
+}

@@ -32,7 +32,7 @@
       <section id='women-menu' class='menu' ng-mouseover='showMenu()' ng-mouseleave='hideMenu()'>
         <arrow class="arrow-up"></arrow>
         <section>
-        <a class='menu-item' ng-click=''>Casualwear</a>
+        <a class='menu-item' ng-click='showCasualwear()'>Casualwear</a>
         </section>
         <section>
         <a class='menu-item' ng-click=''>Formalwear</a>
@@ -43,6 +43,12 @@
       </section>
 
     </header>
+
+    <section id="products" ng-repeat="product in list">
+      <article>{{product.category}}</article>
+      <article>{{product.colour}}</article>
+      <article>{{product.price}}</article>
+    </section>
 
   </body>
 </html>
