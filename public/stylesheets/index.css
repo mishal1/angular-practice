@@ -3,24 +3,27 @@ body {
   font-size: 15px;
 }
 
-#top-header {
-  background-color: #f5f5f5;
+.headers {
   display: inline;
   width: 100%;
   margin: 0px;
   padding: 0px;
-  position: fixed;
   right: 0px;
   left: 0px;
   top: 0px;
-  height: 10%;
+}
+
+#top-header {
+  background-color: #f5f5f5;
+  position: absolute;
+  height: 70px;
 }
 
 #delivery {
   display: block;
   position: absolute;
   height: 100%;
-  width: 15%;
+  width: 20%;
   padding:1%;
   padding-left: 4%;
   text-align: center;
@@ -31,7 +34,7 @@ body {
   position: relative;
   display: block;
   font-size: 30px;
-  padding: 1%;
+  padding-top: 1%;
 }
 
 #side-topbar {
@@ -43,4 +46,49 @@ body {
   padding-right: 4%;
   right: 0px;
   top: 0px;
+}
+
+#bottom-header {
+  background-color: #fafafa;
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.nav-icon {
+  padding-right: 10%;
+  padding-left: 10%;
+  position: relative;
+  top: 25%;
+}
+
+.menu {
+  background-color: #f5f5f5;
+  position: absolute;
+  width: 200px;
+  text-align: center;
+  top: 45px;
+  left: 10%;
+  font-size: 15px;
+  display: none;
+}
+
+.menu-item {
+  position: relative;
+  padding: 5px;
+  display: block;
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #f5f5f5;
+  position: absolute;
+  top: -9px;
+  text-align: center;
 }

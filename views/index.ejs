@@ -1,24 +1,44 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/index.css"/>
   </head>
   <body>
 
     <title>Shop</title>
 
-    <topHeader id='top-header'>
+    <header class='headers' id='top-header'>
+
       <delivery id='delivery'>£10.00 off when you spend over £50.00</delivery>
       <name id='name'>ShopName</name>
-
       <side id='side-topbar'>
-        <signin>Sign In |</signin>
-        <register>Register |</register>
-        <basket>Basket</basket>
-        
+        <signin><a href='#'>Sign In</a> |</signin>
+        <register><a href='#'>Register</a> |</register>
+        <basket><a href='#'>Basket</a> </basket>
       </side>
-      
-    </topHeader>
+
+    </header>
+
+    <header class='headers' id='bottom-header'>
+
+      <women class='nav-icon'>Women</women>
+      <section class='menu'>
+        <arrow class="arrow-up"></arrow>
+        <section>
+        <a class='menu-item'>Casualwear</a>
+        </section>
+        <section>
+        <a class='menu-item'>Formalwear</a>
+        </section>
+        <section>
+        <a class='menu-item'>Footwear</a>
+        </section>
+      </section>
+
+      <men class='nav-icon'>Men</men>
+
+    </header>
 
   </body>
 </html>
