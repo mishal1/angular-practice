@@ -1,0 +1,46 @@
+body {
+  font-family: "Tahoma";
+  font-size: 15px;
+}
+
+#top-header {
+  background-color: #f5f5f5;
+  display: inline;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  height: 10%;
+}
+
+#delivery {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  padding:1%;
+  padding-left: 4%;
+  text-align: center;
+}
+
+#name {
+  text-align: center;
+  position: relative;
+  display: block;
+  font-size: 30px;
+  padding: 1%;
+}
+
+#side-topbar {
+  position: absolute;
+  display: inline;
+  text-align: center;
+  padding-top: 1.5%;
+  padding-bottom:2%;
+  padding-right: 4%;
+  right: 0px;
+  top: 0px;
+}
