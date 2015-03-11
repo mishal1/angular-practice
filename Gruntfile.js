@@ -36,6 +36,31 @@ grunt.initConfig({
     src: ['test/acceptanceTests/*.js']
     }
   },
+  protractor: {
+    options: {
+      configFile: "test/protractor-conf.js",
+   
+      // Do you want the output to use fun colors?
+      noColor: false,
+   
+      // Set to true if you would like to use the Protractor command line debugging tool
+      // debug: true,
+   
+      // Additional arguments that are passed to the webdriver command
+      args: { }
+    },
+    e2e: {
+      options: {
+        // Stops Grunt process if a test fails
+        keepAlive: false
+      }
+    },
+    continuous: {
+      options: {
+        keepAlive: true
+      }
+    }
+  },
   watch: {
     files: [ 
     './lib/**/*.js',
@@ -44,7 +69,7 @@ grunt.initConfig({
     './public/**/*.js',
     './mockDatabase/*.js'
     ], 
-    tasks: ['jasmine_node', 'express', 'mochaTest', 'jshint']
+    tasks: ['jasmine_node', 'express', 'mochaTest', 'protractor', 'jshint']
   }
 });
 
@@ -53,6 +78,7 @@ grunt.loadNpmTasks('grunt-express-server');
 grunt.loadNpmTasks('grunt-jasmine-node');
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-protractor-runner');
 
 grunt.registerTask('mocha',['express','mochaTest']);
 grunt.registerTask('jasmine', ['jasmine_node']);
