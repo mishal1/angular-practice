@@ -6,16 +6,17 @@ app.controller('mainCtrl', function($scope, $http){
     menu.style.display = 'block'
   }
   $scope.hideMenu = function(){
+    console.log('hover')
     var menu = document.getElementById('women-menu')
     menu.style.display = 'none'
   }
-  $scope.showCasualwear = function(){
+  $scope.show = function(item){
     $http.get('mockDatabase/products.json')
       .success(function(products){
         $scope.list = []
-        console.log()
+        console.log(item)
         for(var key in products){
-          if(products[key].category === "Women's Casualwear"){
+          if(products[key].category === item){
             $scope.list.push(products[key])
             console.log($scope.list)
           }
