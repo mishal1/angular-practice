@@ -15,19 +15,22 @@
   <header class="top-bar large-12" data-topbar role="navigation">
     <section id='name'>Shopfront</section>
     <section class="top-bar-section">
-
-      <a class='nav-icon' data-dropdown="hover1" data-options="is_hover:true">Women</a>
-        <ul id="hover1" class="f-dropdown" data-dropdown-content>
-          <li ng-click="show('Womens Casualwear')">
-            <a>Casualwear</a>
-          </li>
-          <li ng-click="show('Womens Formalwear')">
-            <a>Formalwear</a>
-          </li>
-          <li ng-click="show('Womens Footwear')">
-            <a>Footwear</a>
-          </li>
+      <ul class='left'>
+        <ul class="has-dropdown" id='women-block'>
+          <a id='women-button' href='#'>Women</a>
+          <ul class="dropdown">
+            <li ng-click="show('Womens Casualwear')">
+              <a>Casualwear</a>
+            </li>
+            <li ng-click="show('Womens Formalwear')">
+              <a>Formalwear</a>
+            </li>
+            <li ng-click="show('Womens Footwear')">
+              <a>Footwear</a>
+            </li>
+          </ul>
         </ul>
+      </ul>
     </section>
   </header>
 
@@ -36,6 +39,7 @@
       <article>{{product.category}}</article>
       <article>{{product.colour}}</article>
       <article>{{product.price}}</article>
+      <button>+</button>
     </section>
   </main>
 

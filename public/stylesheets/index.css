@@ -7,14 +7,12 @@ header {
   height: 70px !important;
 }
 
-
-
 #name {
   display: block;
   font-size: 30px;
   position: relative;
   text-align: center;
-  padding: 1%;
+  padding: 5px;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
@@ -32,9 +30,25 @@ header {
   position: relative;
 }
 
+a {
+  color: black;
+  font-size: 20px;
+  padding: 2%;
+}
 
+#women-block {
+  position: relative;
+  bottom: 35px;
+}
 
+#women-button {
+  margin: 10%;
+}
 
+#main {
+  position: relative;
+  top: 10px;
+}
 
 /*#top-header {
   background-color: #f5f5f5;
@@ -131,11 +145,4 @@ header {
   position: relative;
 }
 
-#main {
-  position: relative;
-  display: block;
-  height: 500px;
-  width: 100%;
-  top: 115px;
-  z-index: -1;
-}*/
+*/
