@@ -4,6 +4,7 @@ describe('homepage', function() {
 
   beforeEach(function() {
     browser.get('http://localhost:3000');
+    browser.waitForAngular();
   });
 
   it('should have title', function() {
@@ -24,12 +25,32 @@ describe('homepage', function() {
     });
   });
 
+  it('should not display any items if a category has not been clicked', function(){
+    element.all(by.id('products')).then(function(items) {
+      expect(items.length).toBe(0);
+    });
+  });
+
   it('should click the women button and a category to display items', function(){
-    var element = browser.findElement(By.id('women-button')).then(function(element){
-      element.click();
-      var category_button = browser.findElement(By.id('casualwear'))
+    var button = browser.findElement(By.id('women-button')).then(function(button){
+      button.click();
+      var category_button = browser.findElement(By.id('casualwear'));
       category_button.click().then(function(){
-        
+        element.all(by.id('products')).then(function(items) {
+          expect(items.length).toBe(2);
+          expect(items[0].isDisplayed()).toBe(true);
+        });
+      });
+    });
+  });
+
+  it('should have nothing in their basket', function(){
+    var basket = browser.findElement(By.id('basket')).then(function(button){
+      browser.sleep(5000)
+      button.click().then(function(){
+        var price = browser.findElement(By.id('price')).then(function(price){
+          expect(price.getText()).toEqual(0)
+        })
       });
     });
   });

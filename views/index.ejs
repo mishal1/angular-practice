@@ -19,13 +19,13 @@
         <ul class="has-dropdown" id='women-block'>
           <a id='women-button' href='#'>Women</a>
           <ul class="dropdown">
-            <li id='casualwear'>
+            <li id='casualwear' ng-click="show('Womens Casualwear')">
               <a>Casualwear</a>
             </li>
-            <li>
+            <li ng-click="show('Womens Formalwear')">
               <a>Formalwear</a>
             </li>
-            <li>
+            <li ng-click="show('Womens Footwear')">
               <a>Footwear</a>
             </li>
           </ul>
@@ -33,6 +33,17 @@
       </ul>
     </section>
   </header>
+
+  <main id='main'>
+    <section id="products" ng-repeat="product in list">
+      <article id='category'>{{product.category}}</article>
+      <article>{{product.colour}}</article>
+      <article>{{product.price}}</article>
+      <button>ADD</button>
+    </section>
+  </main>
+
+  <a id='basket' ng-click='showBasket()'>Basket</a>
 
   <script src="vendor/modernizr.js"></script>
   <script src="vendor/jquery.js"></script>
