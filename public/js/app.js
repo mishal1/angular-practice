@@ -17,6 +17,7 @@ app.controller('mainCtrl', function($scope, $http){
   };
 
   $scope.showBasket = function(){
-    console.log('basket')
+    
   };
+  
 });
