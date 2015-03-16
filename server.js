@@ -6,6 +6,7 @@ var ShoppingCart = require('./lib/shoppingCart')
 var Price = require('./lib/price')
 var util = require('util');
 var stock = require('./public/mockDatabase/products.json')
+var voucherList = require('./public/mockDatabase/vouchers.json')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views');
@@ -30,6 +31,14 @@ app.post('/deleteProduct', function(request, response){
 });
 
 app.post('/showShoppingCart', function(request, response){
+  response.send(shoppingCart)
+});
+
+app.post('/addVoucher', function(request, response){
+  console.log('hello')
+  console.log(shoppingCart)
+  shoppingCart.addVoucher(request.body.voucher, voucherList)
+  console.log(shoppingCart)
   response.send(shoppingCart)
 });
 

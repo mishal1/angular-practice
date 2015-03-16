@@ -40,7 +40,7 @@
   </header>
 
   <main id='main'>
-    <section id="products" ng-repeat="product in list">
+    <section id="products" ng-repeat="product in list" ng-cloak>
       <article id='category'>{{product.category}}</article>
       <article>{{product.colour}}</article>
       <article>{{product.price}}</article>
@@ -48,15 +48,22 @@
     </section>
   </main>
 
-  <main id='basket' ng-repeat='item in basket'>
-    <!-- <article id='category'>{{item.category}}</article>
-    <article>{{item.colour}}</article>
-    <article>{{item.price}}</article> -->
+  <main id='basket' ng-repeat='item in basket' ng-cloak>
     {{ item }}
     <button ng-click='deleteFromBasket(item)'>Delete</button>
   </main>
 
-  <article>{{totalPrice}}</article>
+  <article ng-show='totalPrice' class="ng-hide">
+    <section ng-show='voucher'>
+      -£{{voucher}}
+    </section>
+    <section>
+      Total Price: £{{totalPrice}}
+    </section>
+    Enter voucher <input type='text' ng-model="voucherCode">
+    <button ng-click='addVoucher()'>Submit</button>
+  </article>
+  <article ng-show='noProducts' class="ng-hide">No items :(</article>
 
   <script src="vendor/modernizr.js"></script>
   <script src="vendor/jquery.js"></script>

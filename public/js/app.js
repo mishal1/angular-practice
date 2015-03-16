@@ -7,6 +7,7 @@ app.controller('mainCtrl', function($scope, $http){
         $scope.basket = []
         $scope.list = [];
         $scope.totalPrice = null
+        $scope.noProducts = false
         for(var key in product){
           if(product[key].category === item){
             $scope.list.push(product[key]);
@@ -27,9 +28,6 @@ app.controller('mainCtrl', function($scope, $http){
       transformRequest: false,
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     })
-    .success(function(data){
-      console.log(data);
-    })
     .error(function(error){
       console.log(error)
     });
@@ -46,10 +44,14 @@ app.controller('mainCtrl', function($scope, $http){
     .success(function(product){
       $scope.basket = [];
       $scope.list = [];
-      console.log(product.items)
       product.items.forEach(function(item){
         $scope.basket.push(item)
       });
+      if($scope.basket.length === 0){
+        $scope.noProducts = true
+      } else {
+        $scope.noProducts = false
+      }
       $scope.totalPrice = product.price.totalPrice
     })
     .error(function(error){
@@ -72,6 +74,24 @@ app.controller('mainCtrl', function($scope, $http){
     .error(function(error){
       console.log(error)
     });
+  };
+
+  $scope.addVoucher = function(){
+    var item = {voucher: $scope.voucherCode};
+    $http({
+      method:'POST',
+      url:'http://localhost:3000/addVoucher',
+      data: $.param(item),
+      transformRequest: false,
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    })
+      .success(function(data){
+        $scope.voucher = data.price.voucher
+        $scope.showBasket()
+      })
+      .error(function(error){
+        console.log(error)
+      });
   };
 
 });
