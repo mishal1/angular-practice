@@ -31,6 +31,11 @@
           </ul>
         </ul>
       </ul>
+      <ul class='right'>
+        <li ng-click='showBasket()'>
+          <a>Basket</a>
+        </li>
+      </ul>
     </section>
   </header>
 
@@ -39,11 +44,13 @@
       <article id='category'>{{product.category}}</article>
       <article>{{product.colour}}</article>
       <article>{{product.price}}</article>
-      <button>ADD</button>
+      <button ng-click='addToBasket(product)'>ADD</button>
     </section>
   </main>
 
-  <a id='basket' ng-click='showBasket()'>Basket</a>
+  <main id='basket' ng-repeat='item in basket'>
+    {{item.count}}
+  </main>
 
   <script src="vendor/modernizr.js"></script>
   <script src="vendor/jquery.js"></script>

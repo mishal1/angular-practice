@@ -17,7 +17,18 @@ app.controller('mainCtrl', function($scope, $http){
   };
 
   $scope.showBasket = function(){
-    
+    console.log('basket')
+    $http.post('http://localhost:3000/shoppingCart')
+      .success(function(data){
+        console.log(data)
+      })
+      .error(function(error){
+        console.log(error)
+      })
   };
-  
+
+  $scope.addToBasket = function(product){
+    console.log(product)
+  };
+
 });
