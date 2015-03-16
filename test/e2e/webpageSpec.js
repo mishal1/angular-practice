@@ -44,15 +44,15 @@ describe('homepage', function() {
     });
   });
 
-  it('should have nothing in their basket', function(){
-    var basket = browser.findElement(By.id('basket')).then(function(button){
-      browser.sleep(5000)
-      button.click().then(function(){
-        var price = browser.findElement(By.id('price')).then(function(price){
-          expect(price.getText()).toEqual(0)
-        })
-      });
-    });
-  });
+  // it('should have nothing in their basket', function(){
+  //   var basket = browser.findElement(By.id('basket')).then(function(button){
+  //     browser.sleep(5000)
+  //     button.click().then(function(){
+  //       var price = browser.findElement(By.id('price')).then(function(price){
+  //         expect(price.getText()).toEqual(0)
+  //       })
+  //     });
+  //   });
+  // });
 
 });

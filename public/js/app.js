@@ -3,11 +3,13 @@ var app = angular.module('shop', []);
 app.controller('mainCtrl', function($scope, $http){
   $scope.show = function(item){
     $http.get('mockDatabase/products.json')
-      .success(function(products){
+      .success(function(product){
+        $scope.basket = []
         $scope.list = [];
-        for(var key in products){
-          if(products[key].category === item){
-            $scope.list.push(products[key]);
+        $scope.totalPrice = null
+        for(var key in product){
+          if(product[key].category === item){
+            $scope.list.push(product[key]);
           }
         }
       })
@@ -16,19 +18,60 @@ app.controller('mainCtrl', function($scope, $http){
       });
   };
 
-  $scope.showBasket = function(){
-    console.log('basket')
-    $http.post('http://localhost:3000/shoppingCart')
-      .success(function(data){
-        console.log(data)
-      })
-      .error(function(error){
-        console.log(error)
-      })
+  $scope.addToBasket = function(product){
+    var item = {product: product};
+    $http({
+      method:'POST',
+      url:'http://localhost:3000/addProduct',
+      data: $.param(item),
+      transformRequest: false,
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    })
+    .success(function(data){
+      console.log(data);
+    })
+    .error(function(error){
+      console.log(error)
+    });
   };
 
-  $scope.addToBasket = function(product){
-    console.log(product)
+  $scope.showBasket = function(){
+    var hello = {msg: 'hello word!'};
+    $http({
+      method:'POST',
+      url:'http://localhost:3000/showShoppingCart',
+      transformRequest: false,
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    })
+    .success(function(product){
+      $scope.basket = [];
+      $scope.list = [];
+      console.log(product.items)
+      product.items.forEach(function(item){
+        $scope.basket.push(item)
+      });
+      $scope.totalPrice = product.price.totalPrice
+    })
+    .error(function(error){
+      console.log(error);
+    });
+  };
+
+  $scope.deleteFromBasket = function(product){
+    var item = {product: product};
+    $http({
+      method:'POST',
+      url:'http://localhost:3000/deleteProduct',
+      data: $.param(item),
+      transformRequest: false,
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    })
+    .success(function(data){
+      $scope.showBasket()
+    })
+    .error(function(error){
+      console.log(error)
+    });
   };
 
 });

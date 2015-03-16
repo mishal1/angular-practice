@@ -49,8 +49,14 @@
   </main>
 
   <main id='basket' ng-repeat='item in basket'>
-    {{item.count}}
+    <!-- <article id='category'>{{item.category}}</article>
+    <article>{{item.colour}}</article>
+    <article>{{item.price}}</article> -->
+    {{ item }}
+    <button ng-click='deleteFromBasket(item)'>Delete</button>
   </main>
+
+  <article>{{totalPrice}}</article>
 
   <script src="vendor/modernizr.js"></script>
   <script src="vendor/jquery.js"></script>

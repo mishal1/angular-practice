@@ -25,14 +25,7 @@ describe('Shopping Cart', function(){
     };
     cart = new ShoppingCart(price);
     shoe = {price: 5, quantity: 1};
-    stock = { 'shoe': shoe,
-      decrease: function(name){
-        stock[name].quantity -= 1;
-      },
-      increase: function(name){
-        stock[name].quantity += 1;
-      }
-    };
+    stock = {'shoe': shoe};
     vouchers = {'under50': 5.00};
   });
 
@@ -59,7 +52,7 @@ describe('Shopping Cart', function(){
     });
 
     it('cannot add an item if it is not in stock anymore', function(){
-      cart.add('shoe', stock);
+      expect(cart.add('shoe', stock)).toEqual('Out of stock!');
       expect(cart.items).toEqual([shoe]);
     });
 

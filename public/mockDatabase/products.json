@@ -3,78 +3,91 @@
     "category": "Womens Footwear",
     "colour": "Patent Black",
     "price": 99.00,
-    "quantity": 5
+    "quantity": 5,
+    "name": "Almond Toe Court Shoes"
   },
   "Suede Shoes": {
     "category": "Womens Footwear",
     "colour": "Blue",
     "price": 42.00,
-    "quantity": 4
+    "quantity": 4,
+    "name": "Suede Shoes"
   },
   "Leather Driver Saddle Loafers": {
     "category": "Mens Footwear",
     "colour": "Tan",
     "price": 34.00,
-    "quantity": 12
+    "quantity": 12,
+    "name": "Leather Driver Saddle Loafers"
   },
-  "Flip flops": {
+  "Red Flip flops": {
     "category": "Mens Footwear",
     "colour": "Red",
     "price": 19.00,
-    "quantity": 6
+    "quantity": 6,
+    "name": "Red Flip flops"
   },
-  "Flip flops": {
+  "Blue Flip flops": {
     "category": "Mens Footwear",
     "colour": "Blue",
     "price": 19.00,
-    "quantity": 0
+    "quantity": 0,
+    "name": "Blue Flip flops"
   },
   "Gold Button Cardigan": {
     "category": "Womens Casualwear",
     "colour": "Black",
     "price": 167.00,
-    "quantity": 6
+    "quantity": 6,
+    "name": "Gold Button Cardigan"
   },
   "Cotton Shorts": {
     "category": "Womens Casualwear",
     "colour": "Medium Red",
     "price": 30.00,
-    "quantity": 5
+    "quantity": 5,
+    "name": "Cotton Shorts"
   },
-  "Fine Stripe Short Sleeve Shirt": {
+  "Grey Fine Stripe Short Sleeve Shirt": {
     "category": "Mens Casualwear",
     "colour": "Grey",
     "price": 49.99,
-    "quantity": 9
+    "quantity": 9,
+    "name": "Grey Fine Stripe Short Sleeve Shirt"
   },
-  "Fine Stripe Short Sleeve Shirt": {
+  "Green Fine Stripe Short Sleeve Shirt": {
     "category": "Mens Casualwear",
     "colour": "Green",
     "price": 39.99,
-    "quantity": 3
+    "quantity": 3,
+    "name": "Green Fine Stripe Short Sleeve Shirt"
   }, 
   "Sharkskin Waistcoat": {
     "category": "Mens Formalwear",
     "colour": "Charcoal",
     "price": 75.00,
-    "quantity": 2
+    "quantity": 2,
+    "name": "Sharkskin Waistcoat"
   }, 
   "Lightweight Patch Pocket Blazer": {
     "category": "Mens Formalwear",
     "colour": "Deer",
     "price": 175.00,
-    "quantity": 1
+    "quantity": 1,
+    "name": "Lightweight Patch Pocket Blazer"
   }, 
   "Bird Print Dress": {
     "category": "Womens Formalwear",
     "colour": "Black",
     "price": 270.00,
-    "quantity": 10
+    "quantity": 10,
+    "name": "Bird Print Dress"
   }, 
   "Mid Twist Cut-Out Dress": {
     "category": "Womens Formalwear",
     "colour": "Pink",
     "price": 540.00,
-    "quantity": 5
-  } 
+    "quantity": 5,
+    "name": "Mid Twist Cut-Out Dress"
+  }
 }
