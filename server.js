@@ -35,10 +35,7 @@ app.post('/showShoppingCart', function(request, response){
 });
 
 app.post('/addVoucher', function(request, response){
-  console.log('hello')
-  console.log(shoppingCart)
   shoppingCart.addVoucher(request.body.voucher, voucherList)
-  console.log(shoppingCart)
   response.send(shoppingCart)
 });
 

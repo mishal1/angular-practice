@@ -8,6 +8,12 @@ header {
 }
 
 #name {
+  font-size: 30px;
+  padding: 10px;
+}
+
+/*
+#name {
   display: block;
   font-size: 30px;
   position: relative;
@@ -49,3 +55,4 @@ a {
   position: relative;
   top: 10px;
 }
+*/

@@ -13,11 +13,15 @@
   <body ng-controller="mainCtrl">
 
   <header class="top-bar large-12" data-topbar role="navigation">
-    <section id='name'>Shopfront</section>
+
+    <ul class="title-area large-2 medium-2">
+      <a id='name' href='/'>Shopfront</a>
+    </ul>
+
     <section class="top-bar-section">
-      <ul class='left'>
-        <ul class="has-dropdown" id='women-block'>
-          <a id='women-button' href='#'>Women</a>
+      <ul class='right'>
+        <li class="has-dropdown" id='women-block'>
+          <a id='women-button'>Women</a>
           <ul class="dropdown">
             <li id='casualwear' ng-click="show('Womens Casualwear')">
               <a>Casualwear</a>
@@ -29,9 +33,21 @@
               <a>Footwear</a>
             </li>
           </ul>
-        </ul>
-      </ul>
-      <ul class='right'>
+        </li>
+        <li class="has-dropdown" id='men-block'>
+          <a id='men-button'>Men</a>
+          <ul class="dropdown">
+            <li id='casualwear' ng-click="show('Mens Casualwear')">
+              <a>Casualwear</a>
+            </li>
+            <li ng-click="show('Mens Formalwear')">
+              <a>Formalwear</a>
+            </li>
+            <li ng-click="show('Mens Footwear')">
+              <a>Footwear</a>
+            </li>
+          </ul>
+        </li>
         <li ng-click='showBasket()'>
           <a>Basket</a>
         </li>

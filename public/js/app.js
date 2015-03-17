@@ -1,6 +1,7 @@
 var app = angular.module('shop', []);
 
 app.controller('mainCtrl', function($scope, $http){
+
   $scope.show = function(item){
     $http.get('mockDatabase/products.json')
       .success(function(product){
